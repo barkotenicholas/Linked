@@ -14,5 +14,10 @@ public class Main {
 
         linkedList.printList();
 
+        linkedList.insertAt(2,22);
+
+        linkedList.printList();
+
+
     }
 }
