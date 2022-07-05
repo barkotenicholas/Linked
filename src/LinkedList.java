@@ -1,6 +1,6 @@
 public class LinkedList {
 
-    private Node head;
+    public Node head;
     private int size;
 
     public void insertFront(int data) {
@@ -43,12 +43,27 @@ public class LinkedList {
                 node.setNext(current.getNext());
                 current.setNext(node);
 
-
             }
 
             current = current.getNext();
             i++;
         }
+
+    }
+
+    public void reverse(){
+
+        Node current = head;
+        Node previous  = null;
+        while (current != null){
+            Node nextElement = current.getNext();
+            current.setNext(previous);
+            previous  = current;
+            current = nextElement;
+
+        }
+
+        head = previous;
 
     }
 
@@ -62,7 +77,7 @@ public class LinkedList {
 
     public void printList() {
         Node current = head;
-        System.out.print("HEAD -> ");
+        System.out.print("HEAD ->  \n");
         while (current != null) {
 
             System.out.println(current);

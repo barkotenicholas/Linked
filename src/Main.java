@@ -1,9 +1,6 @@
 public class Main {
     public static void main(String[] args) {
 
-
-
-
         LinkedList linkedList = new LinkedList();
 
         linkedList.insertFront(1);
@@ -12,10 +9,10 @@ public class Main {
         linkedList.insertFront(5);
         linkedList.insertFront(9);
 
-        linkedList.printList();
 
-        linkedList.insertAt(2,22);
+        linkedList.reverse();
 
+        System.out.println("Reversed");
         linkedList.printList();
 
 
