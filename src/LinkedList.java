@@ -25,6 +25,29 @@ public class LinkedList {
 
     }
 
+    public void remove(int value) {
+
+
+        Node current = head , prev = null;
+
+        if (current != null && current.data == value) {
+            head = current.next;
+            return;
+        }
+
+        while (current != null && current.data != value) {
+          prev = current;
+          current = current.getNext();
+        }
+
+        if (current == null) return;
+
+        prev.next = current.next;
+
+
+
+    }
+
     public void insertAt(int index, int data) {
 
         if (isEmpty() && index > size && size < 1) {
@@ -37,7 +60,7 @@ public class LinkedList {
 
         while (current != null) {
 
-            if( i  == index -1){
+            if (i == index - 1) {
 
                 Node node = new Node(data);
                 node.setNext(current.getNext());
@@ -51,14 +74,14 @@ public class LinkedList {
 
     }
 
-    public void reverse(){
+    public void reverse() {
 
         Node current = head;
-        Node previous  = null;
-        while (current != null){
+        Node previous = null;
+        while (current != null) {
             Node nextElement = current.getNext();
             current.setNext(previous);
-            previous  = current;
+            previous = current;
             current = nextElement;
 
         }
